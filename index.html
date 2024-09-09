@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <!-- Alunos: David, Gabriel, Gustavo e Rodrygo -->
+    <!-- RA: 10417694, 10443681, 10437996, 10381768  -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POC - 02</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>POC 02 - Métodos de arrays</h1>
+  <h3>Os exemplos também podem ser visualizados pelo console</h3>
+
+  <h2>Array Original:</h2>
+  <p><strong>Array Original:</strong> <span id="arrayOriginal"></span></p>
+
+  <!--  sort -->
+  <h2>1. Método sort()</h2>
+  <p><strong>Explicação:</strong> O método <code>sort()</code> ordena os elementos de um array. Por padrão, ele converte
+    os elementos para strings e os ordena de forma crescente ou alfabetica. Este metodo pode alterar o array original</p>
+  <pre><code>
+const numerosOrdenados = [...numeros].sort((a, b) => a - b);
+    </code></pre>
+  <p><strong>Array Ordenado:</strong> <span id="resultadoSort"></span></p>
+
+  <!--  filter -->
+  <h2>2. Método filter()</h2>
+  <p><strong>Explicação:</strong> O método <code>filter()</code> cria um novo array contendo todos os elementos que
+    passam em um teste fornecido por uma função. No exemplo abaixo, estamos filtrando números maiores que 3.</p>
+  <pre><code>
+const numerosMaioresQue3 = numeros.filter(num => num > 3);
+    </code></pre>
+  <p><strong>Números Maiores que 3:</strong> <span id="resultadoFilter"></span></p>
+
+  <!--  map -->
+  <h2>3. Método map()</h2>
+  <p><strong>Explicação:</strong> O método <code>map()</code> cria um novo array a partir de um ja existente com aplicando uma função
+    em cada elemento do array original. Aqui, estamos calculando o quadrado de cada número no array.</p>
+  <pre><code>
+const quadrados = numeros.map(num => num * num);
+    </code></pre>
+  <p><strong>Quadrados dos Números:</strong> <span id="resultadoMap"></span></p>
+
+  <!--  reduce -->
+  <h2>4. Método reduce()</h2>
+  <p><strong>Explicação:</strong> O método <code>reduce()</code> aplica uma função a um array e/ou a cada valor do
+    array (da esquerda para a direita) para reduzi-lo a um único valor. No exemplo abaixo, estamos somando todos os
+    números do array.</p>
+  <pre><code>
+const soma = numeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+    </code></pre>
+  <p><strong>Soma dos Números:</strong> <span id="resultadoReduce"></span></p>
+
+  <!--  spread -->
+  <h2>5. Operador Spread (...)</h2>
+  <p><strong>Explicação:</strong> O operador <code>spread</code> (<code>...</code>) permite expandir um array em seus
+    elementos individuais, o que é útil para copiar arrays ou combinar arrays com novos elementos. No exemplo abaixo,
+    estamos criando um novo array adicionando dois novos números ao array original.</p>
+  <pre><code>
+const novosNumeros = [...numeros, 10, 11];
+    </code></pre>
+  <p><strong>Novo Array com Números Adicionais:</strong> <span id="resultadoSpread"></span></p>
+
+  <script>
+    // Array base
+    const numeros = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3];
+
+    // display do array
+    document.getElementById('arrayOriginal').textContent = numeros.join(', ');
+    console.log('Array Original:', numeros);
+
+    // sort
+    const numerosOrdenados = [...numeros].sort((a, b) => a - b);
+    document.getElementById('resultadoSort').textContent = numerosOrdenados.join(', ');
+    console.log('Números Ordenados:', numerosOrdenados);
+
+    // filter
+    const numerosMaioresQue3 = numeros.filter(num => num > 3);
+    document.getElementById('resultadoFilter').textContent = numerosMaioresQue3.join(', ');
+    console.log('Números Maiores que 3:', numerosMaioresQue3);
+
+    // map
+    const quadrados = numeros.map(num => num * num);
+    document.getElementById('resultadoMap').textContent = quadrados.join(', ');
+    console.log('Quadrados dos Números:', quadrados);
+
+    // reduce
+    const soma = numeros.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0);
+    document.getElementById('resultadoReduce').textContent = soma;
+    console.log('Soma dos Números:', soma);
+
+    // spread
+    const novosNumeros = [...numeros, 10, 11];
+    document.getElementById('resultadoSpread').textContent = novosNumeros.join(', ');
+    console.log('Novo Array com Números Adicionais:', novosNumeros);
+
+  </script>
+
+</body>
+
+</html>
