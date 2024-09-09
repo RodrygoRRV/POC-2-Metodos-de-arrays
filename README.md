@@ -1,5 +1,5 @@
-### POC-2-Metodos-de-arrays
-*repositorio para entrega do POC na disciplina de WebMobile*
+# POC-2-Metodos-de-arrays
+### *repositorio para entrega do POC na disciplina de WebMobile*
 
 Sort: Um metodo para ordenação de arrays. Por padrão converte os elementos para strings e os ordena de forma crescente ou alfabetica, este metodo pode alterar o array original. 
 
